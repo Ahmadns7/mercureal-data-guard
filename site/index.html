@@ -1,40 +1,84 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MercuReal Data Guard: know where your mobile data goes</title>
-<meta name="description" content="Free, open-source, offline Android app showing mobile data use per app, naira cost estimates and bundle expiry.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2310b981'/><path d='M16 6l9 4v6c0 5-4 8-9 10-5-2-9-5-9-10v-6z' fill='white'/></svg>">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090d10">
+<title>MercuReal Data Guard — your data, in focus</title>
+<meta name="description" content="A free, open-source Android app that helps you understand mobile data use, estimate naira costs and track bundle expiry. Private and offline.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='10' fill='%2378f0b4'/><path d='M16 5l10 4v7c0 6-4 10-10 12C10 26 6 22 6 16V9z' fill='%23090d10'/></svg>
 <style>
-:root{--bg:#07110e;--card:#0e1f19;--line:#1b3a2f;--tx:#e8f5ef;--mu:#8fb3a3;--ac:#10b981}
-*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--tx)}
-a{color:var(--ac)}.w{max-width:1000px;margin:auto;padding:0 20px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}nav b{font-size:18px}nav a{color:var(--mu);text-decoration:none;margin-left:18px}
-.hero{padding:70px 0 50px;text-align:center}h1{font-size:clamp(34px,6vw,60px);line-height:1.1;margin:0 0 18px}h1 span{color:var(--ac)}
-.hero p{color:var(--mu);max-width:620px;margin:0 auto 30px;font-size:18px}
-.btn{display:inline-block;padding:13px 24px;border-radius:12px;background:var(--ac);color:#04130d;font-weight:700;text-decoration:none;margin:5px}.btn.o{background:none;border:1px solid var(--line);color:var(--tx)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:30px 0}
-.c{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}.c h3{margin:0 0 6px}.c p{margin:0;color:var(--mu)}
-section{padding:40px 0}h2{font-size:30px;margin:0 0 6px}.sub{color:var(--mu);margin:0 0 10px}
-.phone{max-width:300px;margin:30px auto 0;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px;text-align:left}
-.bar{height:8px;border-radius:4px;background:var(--line);margin:4px 0 14px}.bar i{display:block;height:100%;border-radius:4px;background:var(--ac)}
-.big{font-size:34px;font-weight:800}.row{display:flex;justify-content:space-between;color:var(--mu);font-size:14px}
-code,pre{background:#0a1914;border:1px solid var(--line);border-radius:10px}pre{padding:16px;overflow:auto}
-.note{border-left:3px solid var(--ac);padding:4px 16px;color:var(--mu)}
-footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mu);font-size:14px;margin-top:40px}
-</style></head><body><div class="w">
-<nav><b>🛡 MercuReal Data Guard</b><div><a href="#features">Features</a><a href="#privacy">Privacy</a><a href="#build">Build</a><a href="https://github.com/Ahmadns7/mercureal-data-guard">GitHub</a></div></nav>
-<header class="hero"><h1>Know where your <span>mobile data</span> goes.</h1>
-<p>A free, open-source Android app that tracks data per app, estimates the naira cost using a price you set, and watches your bundle expiry. Offline. No account. No tracking.</p>
-<a class="btn" href="https://github.com/Ahmadns7/mercureal-data-guard/releases/latest">Download APK</a><a class="btn o" href="https://github.com/Ahmadns7/mercureal-data-guard">View source</a>
-<div class="phone"><div class="row"><span>This month</span><span>₦ estimate</span></div><div class="big">4.2 GB</div>
-<div class="bar"><i style="width:62%"></i></div><div class="row"><span>Bundle: 10 GB</span><span>6 days left</span></div><div class="bar"><i style="width:40%"></i></div>
-<div class="row"><span>Illustrative mock, not a real screenshot</span></div></div></header>
-<section id="features"><h2>What it does</h2><p class="sub">Simple, honest data awareness.</p><div class="grid">
-<div class="c"><h3>Per-app usage</h3><p>See today's and this month's mobile data by app using Android's NetworkStats.</p></div>
-<div class="c"><h3>Naira cost estimate</h3><p>Set your own price per GB and optional monthly budget. Know what you spend.</p></div>
-<div class="c"><h3>Bundle tracker</h3><p>Add bundles with size, price and validity. See time left and expiring-soon warnings.</p></div>
-<div class="c"><h3>Fully local</h3><p>Data stays on your phone. No internet permission, backend, analytics or cloud backup.</p></div></div></section>
-<section id="privacy"><h2>Privacy by design</h2><p class="sub">The app cannot send your data anywhere because it has no INTERNET permission.</p>
-<p class="note"><b>Honest limits:</b> costs are estimates from your own price, not operator billing. Bundle "remaining" is device traffic since you added the bundle, not your carrier's balance. Not yet validated on a physical device.</p></section>
-<section id="build"><h2>Build it yourself</h2><pre>git clone https://github.com/Ahmadns7/mercureal-data-guard
-cd mercureal-data-guard
-gradle :app:testDebugUnitTest :app:assembleDebug</pre><p class="sub">Needs JDK 17 and Android SDK 36. MIT licensed.</p></section>
-<footer>© MercuReal. Free and open source under the MIT license.</footer></div></body></html>
+:root{color-scheme:dark;--bg:#090d10;--surface:#11181b;--surface2:#172125;--line:#263438;--text:#f0f6f2;--muted:#91a39c;--green:#78f0b4;--blue:#8bc9ff;--glow:rgba(120,240,180,.14)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -18%,#17342d 0,transparent 40%),var(--bg);color:var(--text);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07)}.brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.03em;text-decoration:none}.brand-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:var(--green);color:#0b1712;box-shadow:0 0 26px var(--glow)}.brand-mark svg{width:21px}.nav-links{display:flex;align-items:center;gap:28px}.nav-links a{font-size:14px;color:var(--muted);text-decoration:none}.nav-links a:hover{color:var(--green)}.nav-links .nav-cta{color:var(--text);border:1px solid var(--line);border-radius:999px;padding:8px 15px}.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:8px 11px;border-radius:10px;font:inherit}
+.hero{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:50px;padding:78px 0 90px;min-height:630px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.eyebrow:before{content:"";width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 15px var(--green)}h1{font-size:clamp(46px,6vw,76px);line-height:.99;letter-spacing:-.075em;margin:22px 0}.accent{color:var(--green)}.intro{max-width:500px;color:#aab8b1;font-size:17px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.button{display:inline-flex;align-items:center;gap:10px;padding:13px 19px;border-radius:12px;font-weight:700;text-decoration:none;transition:transform .18s,box-shadow .18s,border-color .18s}.button:hover{transform:translateY(-2px)}.button.primary{color:#07140e;background:var(--green);box-shadow:0 8px 30px var(--glow)}.button.secondary{border:1px solid var(--line);background:rgba(255,255,255,.025)}.trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px;color:var(--muted);font-size:12px}.trust span:before{content:"✓";color:var(--green);margin-right:7px}
+.stage{perspective:1100px;display:grid;place-items:center;min-height:390px}.device{position:relative;width:min(100%,430px);transform:rotateY(-12deg) rotateX(5deg);transition:transform .35s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d;animation:float 7s ease-in-out infinite}.stage:hover .device{transform:rotateY(-5deg) rotateX(2deg) translateY(-5px)}@keyframes float{0%,100%{translate:0 0}50%{translate:0 -9px}}.device:before{content:"";position:absolute;inset:15px -15px -13px 14px;border-radius:27px;background:linear-gradient(135deg,#263e37,#111a1e);border:1px solid #30433c;transform:translateZ(-30px);box-shadow:0 35px 70px rgba(0,0,0,.42)}.dashboard{position:relative;padding:22px;border:1px solid #34433f;border-radius:24px;background:linear-gradient(145deg,rgba(28,40,39,.97),rgba(14,20,23,.98));box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px rgba(255,255,255,.1);backdrop-filter:blur(18px)}.dash-top,.dash-row,.usage-head{display:flex;align-items:center;justify-content:space-between}.dash-top{font-size:12px;color:var(--muted)}.live{display:flex;gap:7px;align-items:center}.live:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}.month{margin-top:22px;font-size:13px;color:var(--muted)}.amount{font-size:43px;font-weight:750;line-height:1.15;letter-spacing:-.05em}.amount small{font-size:15px;font-weight:500;color:var(--muted);letter-spacing:0}.meter{height:8px;margin:14px 0 9px;border-radius:9px;background:#293638;overflow:hidden}.meter span{display:block;height:100%;width:58%;border-radius:inherit;background:linear-gradient(90deg,#70e9aa,#a0f4ce);box-shadow:0 0 18px var(--glow);transition:width .35s}.dash-row{font-size:11px;color:var(--muted)}.dash-row strong{color:var(--text)}.dash-divider{height:1px;background:var(--line);margin:20px 0}.usage-title{font-size:12px;font-weight:650}.tablist{display:flex;gap:5px;padding:3px;border:1px solid var(--line);border-radius:9px}.tab{border:0;background:transparent;color:var(--muted);font:inherit;font-size:10px;padding:5px 9px;border-radius:6px;cursor:pointer}.tab[aria-pressed="true"]{background:#283831;color:var(--green)}.usage-list{display:grid;gap:13px;margin-top:17px}.usage-item{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:10px;font-size:11px}.app-icon{display:grid;place-items:center;width:27px;height:27px;border-radius:8px;background:#202d31;color:var(--blue);font-size:12px}.usage-name{font-weight:600}.usage-meta{color:var(--muted);font-size:10px}.usage-value{color:#dce8e2}.toast{position:absolute;right:-22px;bottom:22px;padding:11px 14px;border:1px solid #3d5048;border-radius:13px;background:#17221f;box-shadow:0 15px 35px #0008;transform:translateZ(44px);font-size:11px}.toast b{color:var(--green)}
+section{padding:78px 0;border-top:1px solid rgba(255,255,255,.06)}.section-heading{max-width:600px;margin-bottom:34px}h2{font-size:clamp(30px,4vw,45px);line-height:1.1;letter-spacing:-.055em;margin:12px 0}.section-heading p,.copy{color:var(--muted)}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.feature{min-height:185px;padding:22px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));transition:transform .2s,border-color .2s,background .2s}.feature:hover{transform:translateY(-5px);border-color:#476457;background:linear-gradient(145deg,rgba(120,240,180,.08),rgba(255,255,255,.012))}.feature-icon{width:37px;height:37px;display:grid;place-items:center;margin-bottom:18px;border-radius:11px;background:#1d3029;color:var(--green)}.feature h3{margin:0 0 7px;font-size:16px}.feature p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}.calculator{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;padding:28px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(130deg,#121c1d,#0f1518)}.calc-controls{display:grid;gap:23px}.control label{display:flex;justify-content:space-between;margin-bottom:8px;color:var(--muted);font-size:13px}.control output{color:var(--text);font-weight:650}.control input{width:100%;accent-color:var(--green);cursor:pointer}.estimate{padding:25px;border-radius:17px;background:radial-gradient(ellipse at 20% 0%,#243d33,#121a1b 70%);border:1px solid #34473e}.estimate-label{font-size:12px;color:var(--muted)}.estimate-value{font-size:42px;font-weight:750;letter-spacing:-.06em}.estimate p{font-size:12px;color:var(--muted);margin:5px 0 0}.privacy{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.privacy-card{padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}.privacy-card strong{color:var(--green)}.disclaimer{border-left:2px solid var(--green);padding:4px 0 4px 15px;color:var(--muted);font-size:13px}.build{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:26px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}.build p{margin:5px 0 0;color:var(--muted);font-size:13px}.build .button{flex-shrink:0}footer{padding:28px 0 40px;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:16px}.footer-links{display:flex;gap:18px}.footer-links a{color:var(--muted);text-decoration:none}.footer-links a:hover{color:var(--green)}:focus-visible{outline:2px solid var(--green);outline-offset:4px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:850px){.hero{grid-template-columns:1fr;gap:30px;padding:62px 0 70px}.hero-copy{text-align:center}.hero .intro{margin-inline:auto}.actions,.trust{justify-content:center}.stage{min-height:340px}.features{grid-template-columns:repeat(2,1fr)}.privacy{grid-template-columns:1fr;gap:22px}}@media(max-width:600px){.wrap{width:min(100% - 30px,1120px)}.topbar{height:66px}.nav-links{display:none;position:absolute;z-index:5;top:65px;left:15px;right:15px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#11181b;flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:10px 8px;margin:0}.nav-links .nav-cta{text-align:center;margin-top:7px}.menu{display:block}.hero{padding-top:50px}.stage{min-height:300px}.device{width:calc(100% - 20px);transform:none}.stage:hover .device{transform:translateY(-3px)}.dashboard{padding:17px}.toast{right:-8px}.features{grid-template-columns:1fr}.feature{min-height:unset}.calculator{grid-template-columns:1fr;padding:18px}.build{align-items:flex-start;flex-direction:column}.footer-inner{flex-direction:column}.privacy{gap:15px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="topbar"><a class="brand" href="#top" aria-label="MercuReal Data Guard home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.7 20 6v5.6c0 5.2-3.4 8.5-8 10.3-4.6-1.8-8-5.1-8-10.3V6l8-3.3Z" stroke="currentColor" stroke-width="2"/><path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>MercuReal <span style="color:var(--muted);font-weight:500">Data Guard</span></a><nav class="nav-links" id="site-nav" aria-label="Main navigation"><a href="#features">Features</a><a href="#calculator">Cost estimator</a><a href="#privacy">Privacy</a><a href="#build">Build</a><a class="nav-cta" href="https://github.com/Ahmadns7/mercureal-data-guard">GitHub <span aria-hidden="true">↗</span></a></nav><button class="menu" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button></header>
+<main id="top">
+<section class="hero" style="border:0;padding-top:0">
+<div class="hero-copy"><span class="eyebrow">Mobile data, made clear</span><h1>Your data.<br><span class="accent">In focus.</span></h1><p class="intro">Know which apps use your mobile data, estimate what it costs in naira, and keep an eye on bundle expiry. All on your phone, with no account and no tracking.</p><div class="actions"><a class="button primary" href="https://github.com/Ahmadns7/mercureal-data-guard/releases/latest">Explore latest release <span aria-hidden="true">↗</span></a><a class="button secondary" href="#features">See how it works <span aria-hidden="true">↓</span></a></div><div class="trust"><span>Free &amp; open source</span><span>Offline by design</span><span>Android</span></div></div>
+<div class="stage" aria-label="Illustrative preview of the app dashboard"><div class="device"><div class="dashboard"><div class="dash-top"><span>DATA GUARD <span aria-hidden="true">/</span> OVERVIEW</span><span class="live">DEVICE PREVIEW</span></div><div class="month">Mobile data this month</div><div class="amount" id="usage-total">4.2 <small>GB</small></div><div class="meter" aria-hidden="true"><span id="usage-meter"></span></div><div class="dash-row"><span>Illustrative usage</span><strong>10 GB bundle</strong></div><div class="dash-divider"></div><div class="usage-head"><span class="usage-title">Usage by app</span><div class="tablist" role="group" aria-label="Choose usage period"><button class="tab" type="button" data-period="today" aria-pressed="false">Today</button><button class="tab" type="button" data-period="month" aria-pressed="true">Month</button></div></div><div class="usage-list" id="usage-list" aria-live="polite"></div></div><div class="toast"><b>On your device</b><br>No account. No tracking.</div></div></div>
+</section>
+<section id="features"><div class="section-heading"><span class="eyebrow">Know what you use</span><h2>A clearer view of your data.</h2><p>Practical tools to make your mobile usage easier to understand.</p></div><div class="features"><article class="feature"><span class="feature-icon" aria-hidden="true">◉</span><h3>Per-app usage</h3><p>See today&apos;s and this month&apos;s mobile data by app with Android NetworkStats.</p></article><article class="feature"><span class="feature-icon" aria-hidden="true">₦</span><h3>Costs you control</h3><p>Set your price per GB and optional monthly budget to get a personal estimate.</p></article><article class="feature"><span class="feature-icon" aria-hidden="true">◷</span><h3>Bundle tracker</h3><p>Add bundle size, price and validity to see time left and expiry reminders.</p></article><article class="feature"><span class="feature-icon" aria-hidden="true">⌑</span><h3>Private by design</h3><p>Your data stays local. No internet permission, backend, analytics or cloud backup.</p></article></div></section>
+<section id="calculator"><div class="section-heading"><span class="eyebrow">Make it yours</span><h2>Get a quick cost estimate.</h2><p>Try your own bundle size and price. This calculator runs in your browser; the Android app lets you configure its estimate on-device.</p></div><div class="calculator"><div class="calc-controls"><div class="control"><label for="bundle-size">Bundle size <output id="size-output">10 GB</output></label><input id="bundle-size" type="range" min="1" max="100" value="10" step="1"></div><div class="control"><label for="bundle-price">Bundle price <output id="price-output">₦3,000</output></label><input id="bundle-price" type="range" min="100" max="50000" value="3000" step="100"></div></div><div class="estimate" aria-live="polite"><span class="estimate-label">Estimated price per GB</span><div class="estimate-value" id="per-gb">₦300</div><p>Simple estimate based on your bundle price and size.</p></div></div></section>
+<section id="privacy"><div class="privacy"><div><span class="eyebrow">Your phone. Your data.</span><h2>Privacy isn&apos;t an extra feature.</h2><p class="copy">MercuReal Data Guard is built to work locally. It doesn&apos;t need an account, cloud service or internet connection to show your usage.</p></div><div class="privacy-card"><p><strong>What stays on your device</strong></p><p class="copy">Usage settings, cost preferences and bundle details are stored locally. The app has no INTERNET permission, backend, analytics or cloud backup.</p><p class="disclaimer"><b>Honest limits:</b> costs are estimates from your price, not operator billing. Bundle remaining is device traffic since you added it, not your carrier balance. Device and OEM support can affect usage reporting; not yet validated on a physical device.</p></div></div></section>
+<section id="build"><div class="build"><div><span class="eyebrow">Open source · MIT license</span><h2>Build it yourself.</h2><p>Requires JDK 17 and Android SDK 36.</p></div><a class="button secondary" href="https://github.com/Ahmadns7/mercureal-data-guard">View source on GitHub <span aria-hidden="true">↗</span></a></div></section>
+</main><footer><div class="footer-inner"><span>© MercuReal · Free and open source under the MIT license.</span><div class="footer-links"><a href="https://github.com/Ahmadns7/mercureal-data-guard">GitHub</a><a href="https://github.com/Ahmadns7/mercureal-data-guard/releases/latest">Releases</a></div></div></footer>
+</div>
+<script>
+(() => {
+  const usage = {
+    month: [{ icon: '◉', name: 'Social', detail: 'Mobile data', value: '1.8 GB' }, { icon: '▶', name: 'Video', detail: 'Mobile data', value: '1.4 GB' }, { icon: '◈', name: 'Other apps', detail: 'Mobile data', value: '1.0 GB' }],
+    today: [{ icon: '◉', name: 'Social', detail: 'Mobile data', value: '248 MB' }, { icon: '▶', name: 'Video', detail: 'Mobile data', value: '172 MB' }, { icon: '◈', name: 'Other apps', detail: 'Mobile data', value: '96 MB' }]
+  };
+  const list = document.querySelector('#usage-list');
+  const total = document.querySelector('#usage-total');
+  const meter = document.querySelector('#usage-meter');
+  document.querySelectorAll('[data-period]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const period = button.dataset.period;
+      document.querySelectorAll('[data-period]').forEach((tab) => tab.setAttribute('aria-pressed', String(tab === button)));
+      list.replaceChildren(...usage[period].map((item) => {
+        const row = document.createElement('div');
+        row.className = 'usage-item';
+        row.innerHTML = `<span class="app-icon" aria-hidden="true">${item.icon}</span><span><span class="usage-name">${item.name}</span><br><span class="usage-meta">${item.detail}</span></span><span class="usage-value">${item.value}</span>`;
+        return row;
+      }));
+      total.innerHTML = period === 'today' ? '516 <small>MB today</small>' : '4.2 <small>GB this month</small>';
+      meter.style.width = period === 'today' ? '22%' : '58%';
+    });
+  });
+  document.querySelector('[data-period="month"]').click();
+  const size = document.querySelector('#bundle-size');
+  const price = document.querySelector('#bundle-price');
+  const formatNaira = (value) => `₦${Number(value).toLocaleString('en-NG')}`;
+  const updateEstimate = () => {
+    document.querySelector('#size-output').value = `${size.value} GB`;
+    document.querySelector('#price-output').value = formatNaira(price.value);
+    document.querySelector('#per-gb').textContent = formatNaira(Math.round(Number(price.value) / Number(size.value)));
+  };
+  size.addEventListener('input', updateEstimate);
+  price.addEventListener('input', updateEstimate);
+  updateEstimate();
+  const menu = document.querySelector('.menu');
+  const nav = document.querySelector('#site-nav');
+  menu.addEventListener('click', () => {
+    const expanded = menu.getAttribute('aria-expanded') === 'true';
+    menu.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('open', !expanded);
+  });
+  nav.addEventListener('click', (event) => {
+    if (event.target.closest('a')) {
+      nav.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+</body>
+</html>
